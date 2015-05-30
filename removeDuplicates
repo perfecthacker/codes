@@ -1,0 +1,20 @@
+int removeDuplicates(int a[], int n)
+{
+	if (n <= 0)
+	{
+		return 0;
+	}
+	int nIndex = 0;
+	for (int i = 1; i < n; ++i)
+	{
+		if (a[nIndex] != a[i])
+		{
+			a[++nIndex] = a[i];
+		}
+	}
+	return nIndex + 1;
+}
+int removeDuplicates1(int a[], int n)
+{
+	return 	distance(a, unique(a, a + n));
+}
